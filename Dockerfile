@@ -1,7 +1,5 @@
 FROM bitnami/moodle:3
 
-EXPOSE 8080
-
 COPY init_container.sh /opt/
 
 # Start and enable SSH
@@ -15,6 +13,4 @@ RUN apt-get update \
 
 COPY sshd_config /etc/ssh/
 
-EXPOSE 8000 2222
-
-ENTRYPOINT [ "/opt/init_container.sh" ] 
+EXPOSE 8080 2222
